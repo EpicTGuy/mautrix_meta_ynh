@@ -55,6 +55,12 @@ services = ["__APP__"]
         bind = ":__INSTALL_DIR__/config.yaml"
         visible = "enable_relaybot"
 
+        [main.bridge.thread_backfill_batch_count]
+        ask = "How many pages of older chats should be imported?"
+        type = "number"
+        min = -1
+        help = "-1 imports all your Messenger chats, 0 only the chats that receive new messages. Pages are fetched one at a time, every 2 seconds. Takes effect at the next bridge start, until the import is finished."
+
     [main.bot]
     name = "Robot Settings"
 

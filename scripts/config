@@ -70,4 +70,11 @@ set__botname() {
     ynh_store_file_checksum "$install_dir/config.yaml"
 }
 
+set__thread_backfill_batch_count() {
+    ynh_app_setting_set --key=thread_backfill_batch_count --value="$thread_backfill_batch_count"
+    ynh_write_var_in_file --file="$install_dir/config.yaml" --key=batch_count --value="$thread_backfill_batch_count" --after="thread_backfill:"
+    ynh_store_file_checksum "$install_dir/config.yaml"
+    ynh_systemctl --service="$app" --action="restart"
+}
+
 ynh_app_config_run $1

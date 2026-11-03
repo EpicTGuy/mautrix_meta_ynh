@@ -36,6 +36,7 @@ encryption_require=$(ynh_app_setting_get --key=encryption_require)
 pickle_key=$(ynh_app_setting_get --key=pickle_key)
 
 print_level=$(ynh_app_setting_get --key=print_level)
+thread_backfill_batch_count=$(ynh_app_setting_get --key=thread_backfill_batch_count)
 
 ynh_script_progression "Checking version..."
 
@@ -146,6 +147,11 @@ if [ -z "$print_level" ]
 then
   print_level="info"
   ynh_app_setting_set --key=print_level --value="$print_level"
+fi
+if [ -z "$thread_backfill_batch_count" ]
+then
+  thread_backfill_batch_count=-1
+  ynh_app_setting_set --key=thread_backfill_batch_count --value="$thread_backfill_batch_count"
 fi
 
 

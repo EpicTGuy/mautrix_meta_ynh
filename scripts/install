@@ -69,6 +69,9 @@ pickle_key=$(ynh_string_random)
 # Logging config. See https://github.com/tulir/zeroconfig for details.
 print_level="info"
 
+# Older chats to import at login (pages, -1 = all, 0 = none)
+thread_backfill_batch_count=-1
+
 ynh_app_setting_set --key=personal_filtering_spaces --value="$personal_filtering_spaces"
 ynh_app_setting_set --key=enable_relaybot --value="$enable_relaybot"
 ynh_app_setting_set --key=admin_only --value="$admin_only"
@@ -91,6 +94,7 @@ ynh_app_setting_set --key=encryption_require --value="$encryption_require"
 ynh_app_setting_set --key=pickle_key --value="$pickle_key"
 
 ynh_app_setting_set --key=print_level --value="$print_level"
+ynh_app_setting_set --key=thread_backfill_batch_count --value="$thread_backfill_batch_count"
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE

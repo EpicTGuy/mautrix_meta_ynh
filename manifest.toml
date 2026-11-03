@@ -7,7 +7,7 @@ name = "Mautrix Meta (Messenger)"
 
 description.en = "Matrix / Synapse puppeting bridge for Facebook Messenger"
 description.fr = "Passerelle Matrix / Synapse pour Facebook Messenger"
-version = "0.2609.0~ynh1"
+version = "0.2610.0~ynh1"
 
 maintainers = []
 
@@ -88,12 +88,12 @@ ram.runtime = "128M"
         in_subdir = false
         extract = false
         rename = "mautrix-meta"
-        amd64.url = "https://github.com/mautrix/meta/releases/download/v0.2609.0/mautrix-meta-amd64"
-        amd64.sha256 = "c600d875024588e1e25469bdcd5cfde44c9a60414f35d660703805cbb3ac75e1"
-        arm64.url = "https://github.com/mautrix/meta/releases/download/v0.2609.0/mautrix-meta-arm64"
-        arm64.sha256 = "04103545c373e1ebd3fd1b2e11e2d48b4c8f4a72fe69fbf4f78a558a141ed47a"
-        armhf.url = "https://github.com/mautrix/meta/releases/download/v0.2609.0/mautrix-meta-arm"
-        armhf.sha256 = "c6505d5697a1c62a0b1a6414da7abaf7e69ffc0e8b65f857787c94247af792f7"
+        amd64.url = "https://github.com/mautrix/meta/releases/download/v0.2610.0/mautrix-meta-amd64"
+        amd64.sha256 = "17b8fd89ee8bb71796b9406aad37fd871110efbb22ace26801034dab9c5a3843"
+        arm64.url = "https://github.com/mautrix/meta/releases/download/v0.2610.0/mautrix-meta-arm64"
+        arm64.sha256 = "150f9d012576b69afc88edc8571d3a2752aa07753039aa8b0503d9ba56b62f4e"
+        armhf.url = "https://github.com/mautrix/meta/releases/download/v0.2610.0/mautrix-meta-arm"
+        armhf.sha256 = "859652908c09bf81f1c618dfdf5cb6218a0515d03abb77cb0ee8011a07ea4fb8"
 
         autoupdate.strategy = "latest_github_release"
         autoupdate.asset.amd64 = "^mautrix-meta-amd64$"
