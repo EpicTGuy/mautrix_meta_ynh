@@ -53,6 +53,14 @@ ensure_bridge_settings() {
     ynh_app_setting_set --key=backfill_max_initial_messages --value="$backfill_max_initial_messages"
 }
 
+# The bridge runs with -n (it never writes config.yaml) and needs no write access to its
+# install dir: the binary and the config belong to root, the app user can only read them.
+secure_install_dir() {
+    chown root:"$app" "$install_dir" "$install_dir/mautrix-meta" "$install_dir/config.yaml"
+    chmod 750 "$install_dir" "$install_dir/mautrix-meta"
+    chmod 640 "$install_dir/config.yaml"
+}
+
 # Enable double puppeting if the admin registered the shared "doublepuppet" appservice in Synapse
 # (https://docs.mau.fi/bridges/general/double-puppeting.html). Nothing happens otherwise.
 configure_double_puppet() {

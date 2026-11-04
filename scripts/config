@@ -64,6 +64,7 @@ set__botname() {
 
     sed -i "s/username:.*/username: $botname/" "$install_dir/config.yaml"
     "$install_dir/mautrix-meta" -g -c "$install_dir/config.yaml" -r "/etc/matrix-$synapse_instance/app-service/$app.yaml"
+    secure_install_dir
     synapse_install_dir=$(ynh_app_setting_get --app "$synapse_instance" --key install_dir)
     "$synapse_install_dir/update_synapse_for_appservice.sh" || ynh_die "Synapse can't restart with the appservice configuration"
     ynh_store_file_checksum "/etc/matrix-$synapse_instance/app-service/$app.yaml"
@@ -73,6 +74,7 @@ set__botname() {
 set__thread_backfill_batch_count() {
     ynh_app_setting_set --key=thread_backfill_batch_count --value="$thread_backfill_batch_count"
     ynh_write_var_in_file --file="$install_dir/config.yaml" --key=batch_count --value="$thread_backfill_batch_count" --after="thread_backfill:"
+    secure_install_dir
     ynh_store_file_checksum "$install_dir/config.yaml"
     ynh_systemctl --service="$app" --action="restart"
 }
@@ -80,6 +82,7 @@ set__thread_backfill_batch_count() {
 set__ghost_displayname_template() {
     ynh_app_setting_set --key=ghost_displayname_template --value="$ghost_displayname_template"
     ynh_write_var_in_file --file="$install_dir/config.yaml" --key=displayname_template --value="$ghost_displayname_template" --after="network:"
+    secure_install_dir
     ynh_store_file_checksum "$install_dir/config.yaml"
     ynh_systemctl --service="$app" --action="restart"
 }
@@ -87,6 +90,7 @@ set__ghost_displayname_template() {
 set__backfill_max_initial_messages() {
     ynh_app_setting_set --key=backfill_max_initial_messages --value="$backfill_max_initial_messages"
     ynh_write_var_in_file --file="$install_dir/config.yaml" --key=max_initial_messages --value="$backfill_max_initial_messages" --after="backfill:"
+    secure_install_dir
     ynh_store_file_checksum "$install_dir/config.yaml"
     ynh_systemctl --service="$app" --action="restart"
 }
