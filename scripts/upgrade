@@ -178,6 +178,7 @@ listrelay="*"
 listuser="@user:domain.tld"
 listadmin="@admin:domain.tld"
 
+ensure_bridge_settings
 ynh_config_add --template="config.yaml" --destination="$install_dir/config.yaml"
 
 listrelay=$listrelay_

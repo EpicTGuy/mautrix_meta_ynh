@@ -5,9 +5,18 @@ following configuration file with SSH:
 ```/var/www/mautrix_meta/config.yaml```
 and then restarting the mautrix_meta service.
 
+⚠️ `config.yaml` is regenerated from the package template at each upgrade: manual changes are kept in a backup copy only. Use the config panel for the options below, they are kept across upgrades.
+
 #### User permissions
 Roles are `relay` < `user` < `admin`. A Matrix ID (`@john:example.com`), a server name (`example.com`) or `*` can be given. Each entry may only appear once: do not give the same account both `user` and `admin` roles.
 
+
+#### Options kept across upgrades (config panel, `Main -> Puppetting Bridge Settings`)
+- **Import all older Messenger chats?** Off by default: only the chats that receive new messages appear. When enabled, every chat is imported at the next bridge start, one page every 2 seconds.
+- **Display name of Messenger contacts in Matrix**: Go template, e.g. `{{or .DisplayName .Username "Unknown user"}} (IG)` to recognise Messenger contacts at a glance.
+- **How many past messages to import in a new chat?** 50 by default, for chats bridged from now on.
+
+The bridge secrets (provisioning shared secret, media signing keys) are generated once and kept in the app settings.
 
 #### End-to-bridge encryption
 The bridge can optionally encrypt messages between Matrix users and the bridge to hide messages from the homeserver. Using Postgres is strongly recommended when using end-to-bridge encryption.

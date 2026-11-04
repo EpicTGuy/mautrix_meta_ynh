@@ -113,6 +113,7 @@ ynh_script_progression "Adding $app's configuration..."
 # as_token="\"This value is generated when generating the registration\""
 # hs_token="\"This value is generated when generating the registration\""
 
+ensure_bridge_settings
 ynh_config_add --template="config.yaml" --destination="$install_dir/config.yaml"
 
 # This calls allows to set multiple users during install question "botusers" specifying them separated by a comma
