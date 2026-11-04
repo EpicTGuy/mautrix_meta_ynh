@@ -9,7 +9,7 @@ description.en = "Matrix / Synapse puppeting bridge for Facebook Messenger"
 description.fr = "Passerelle Matrix / Synapse pour Facebook Messenger"
 version = "0.2610.0~ynh1"
 
-maintainers = []
+maintainers = ["EpicTGuy"]
 
 [upstream]
 license = "AGPL-3.0-or-later"
