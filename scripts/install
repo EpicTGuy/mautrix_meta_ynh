@@ -94,6 +94,12 @@ ynh_app_setting_set --key=encryption_require --value="$encryption_require"
 ynh_app_setting_set --key=pickle_key --value="$pickle_key"
 
 ynh_app_setting_set --key=print_level --value="$print_level"
+
+# Network options of the config panel (bound to config.yaml, kept as settings)
+send_presence_on_typing="false"
+ynh_app_setting_set --key=send_presence_on_typing --value="$send_presence_on_typing"
+disable_view_once="false"
+ynh_app_setting_set --key=disable_view_once --value="$disable_view_once"
 ynh_app_setting_set --key=thread_backfill_batch_count --value="$thread_backfill_batch_count"
 
 #=================================================

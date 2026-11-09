@@ -158,12 +158,6 @@ services = ["__APP__"]
     [advanced.network]
     name = "Facebook Messenger specific config options"
 
-        [advanced.network.displayname_template]
-        ask = "Displayname template for Facebook Messenger users"
-        type = "string"
-        help = "Defaults to '{{or .DisplayName .Username \"Unknown user\"}}'. Available variables: .DisplayName, .Username, .ID"
-        bind = ":__INSTALL_DIR__/config.yaml"
-
         [advanced.network.send_presence_on_typing]
         ask = "Mark you as online when you send typing notifications?"
         type = "boolean"
