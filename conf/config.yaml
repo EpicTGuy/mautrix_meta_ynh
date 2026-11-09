@@ -46,6 +46,7 @@ network:
       # Delay between fetching each batch of threads (to avoid rate limiting)
       batch_delay: 2s
 
+# Config options that affect the central bridge module.
 bridge:
     # The prefix for commands. Only required in non-management rooms.
     command_prefix: "!fb"

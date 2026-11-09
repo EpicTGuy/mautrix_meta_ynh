@@ -65,7 +65,7 @@ services = ["__APP__"]
         [main.bridge.ghost_displayname_template]
         ask = "Display name of Messenger contacts in Matrix"
         type = "string"
-        help = "Go template. .DisplayName is the Instagram name and .Username the Instagram username. For example, add ' (IG)' at the end to recognise Messenger contacts at a glance."
+        help = "Go template. .DisplayName is the Messenger name and .Username the Facebook username. For example, add ' (FB)' at the end to recognise Messenger contacts at a glance."
 
         [main.bridge.backfill_max_initial_messages]
         ask = "How many past messages to import in a new chat?"
